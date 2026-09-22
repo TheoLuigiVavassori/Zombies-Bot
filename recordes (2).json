@@ -1,0 +1,206 @@
+{
+    "bo1": {
+        "kino_der_toten": {
+            "1_player": 240,
+            "2_players": 172,
+            "3_players": 112,
+            "4_players": 106
+        },
+        "five": {
+            "1_player": 244,
+            "2_players": 145,
+            "3_players": 99,
+            "4_players": 53
+        },
+        "ascension": {
+            "1_player": 244,
+            "2_players": 194,
+            "3_players": 117,
+            "4_players": 103
+        },
+        "call_of_the_dead": {
+            "1_player": 105,
+            "2_players": 130,
+            "3_players": 74,
+            "4_players": 67
+        },
+        "shangri_la": {
+            "1_player": 208,
+            "2_players": 136,
+            "3_players": 83,
+            "4_players": 68
+        },
+        "moon": {
+            "1_player": 252,
+            "2_players": 200,
+            "3_players": 115,
+            "4_players": 97
+        },
+        "nacht_der_untoten": {
+            "1_player": 150,
+            "2_players": 118,
+            "3_players": 52,
+            "4_players": 66
+        },
+        "verruckt": {
+            "1_player": 227,
+            "2_players": 117,
+            "3_players": 68,
+            "4_players": 50
+        },
+        "shi_no_numa": {
+            "1_player": 235,
+            "2_players": 174,
+            "3_players": 81,
+            "4_players": 70
+        },
+        "der_riese": {
+            "1_player": 251,
+            "2_players": 176,
+            "3_players": 81,
+            "4_players": 109
+        }
+    },
+    "bo2": {
+        "tranzit": {
+            "1_player": 249,
+            "2_players": 140,
+            "3_players": 96,
+            "4_players": 71
+        },
+        "nuketown": {
+            "1_player": 99,
+            "2_players": 95,
+            "3_players": 70,
+            "4_players": 62
+        },
+        "die_rise": {
+            "1_player": 219,
+            "2_players": 120,
+            "3_players": 101,
+            "4_players": 80
+        },
+        "mob_of_the_dead": {
+            "1_player": 240,
+            "2_players": 159,
+            "3_players": 139,
+            "4_players": 100
+        },
+        "buried": {
+            "1_player": 255,
+            "2_players": 225,
+            "3_players": 175,
+            "4_players": 107
+        },
+        "origins": {
+            "1_player": 179,
+            "2_players": 131,
+            "3_players": 100,
+            "4_players": 85
+        },
+        "bus_depot": {
+            "1_player": 91,
+            "2_players": 92,
+            "3_players": 68,
+            "4_players": 60
+        },
+        "town": {
+            "1_player": 102,
+            "2_players": 97,
+            "3_players": 86,
+            "4_players": 75
+        },
+        "farm": {
+            "1_player": 96,
+            "2_players": 95,
+            "3_players": 77,
+            "4_players": 60
+        }
+    },
+    "bo3": {
+        "shadows_of_evil": {
+            "1_player": 255,
+            "2_players": 171,
+            "3_players": 134,
+            "4_players": 148
+        },
+        "the_giant": {
+            "1_player": 255,
+            "2_players": 227,
+            "3_players": 124,
+            "4_players": 147
+        },
+        "der_eisendrache": {
+            "1_player": 255,
+            "2_players": 223,
+            "3_players": 143,
+            "4_players": 100
+        },
+        "zetsubou_no_shima": {
+            "1_player": 255,
+            "2_players": 211,
+            "3_players": 100,
+            "4_players": 69
+        },
+        "gorod_krovi": {
+            "1_player": 255,
+            "2_players": 226,
+            "3_players": 100,
+            "4_players": 101
+        },
+        "revelations": {
+            "1_player": 255,
+            "2_players": 255,
+            "3_players": 195,
+            "4_players": 111
+        },
+        "nacht_der_untoten": {
+            "1_player": 221,
+            "2_players": 104,
+            "3_players": 64,
+            "4_players": 64
+        },
+        "verruckt": {
+            "1_player": 255,
+            "2_players": 201,
+            "3_players": 64,
+            "4_players": 89
+        },
+        "shi_no_numa": {
+            "1_player": 255,
+            "2_players": 193,
+            "3_players": 100,
+            "4_players": 75
+        },
+        "kino_der_toten": {
+            "1_player": 255,
+            "2_players": 183,
+            "3_players": 115,
+            "4_players": 124
+        },
+        "ascension": {
+            "1_player": 255,
+            "2_players": 255,
+            "3_players": 113,
+            "4_players": 99
+        },
+        "shangri_la": {
+            "1_player": 251,
+            "2_players": 124,
+            "3_players": 70,
+            "4_players": 60
+        },
+        "moon": {
+            "1_player": 255,
+            "2_players": 255,
+            "3_players": 133,
+            "4_players": 97
+        },
+        "origins": {
+            "1_player": 255,
+            "2_players": 164,
+            "3_players": 86,
+            "4_players": 100
+        }
+    }
+}
