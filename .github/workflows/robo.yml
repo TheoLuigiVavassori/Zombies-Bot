@@ -1,0 +1,33 @@
+name: Atualizar Zumbis (Meia-noite)
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: 
+
+jobs:
+  rodar-extrator:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Aceder aos ficheiros
+        uses: actions/checkout@v3
+
+      - name: Iniciar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar Selenium
+        run: pip install -r requirements.txt
+
+      - name: Executar o Extrator
+        run: python script.py
+
+      - name: Guardar o Novo JSON
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Robo Automático"
+          git add recordes.json
+          git commit -m "Atualizando recordes [Auto]" || echo "Nenhuma alteração"
+          git push
