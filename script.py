@@ -12,7 +12,6 @@ opcoes = webdriver.ChromeOptions()
 opcoes.add_argument('--headless=new') # Modo invisível moderno
 opcoes.add_argument('--no-sandbox')
 opcoes.add_argument('--disable-dev-shm-usage')
-# Não precisamos mais passar o caminho do arquivo, o webdriver_manager faz isso sozinho!
 
 servico = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=servico, options=opcoes)
