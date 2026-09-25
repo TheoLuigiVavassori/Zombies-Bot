@@ -7,11 +7,13 @@ import json
 
 print("Iniciando a Extração com o Chrome Oficial...")
 
-# 1. Configuração com o Chrome Oficial
+# 1. Configuração com o Chrome Oficial (Agora com Disfarce e Ecrã Full HD)
 opcoes = webdriver.ChromeOptions()
-opcoes.add_argument('--headless=new') # Modo invisível moderno
+opcoes.add_argument('--headless=new') 
 opcoes.add_argument('--no-sandbox')
 opcoes.add_argument('--disable-dev-shm-usage')
+opcoes.add_argument('--window-size=1920,1080') # Força o layout de PC para a tabela aparecer
+opcoes.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36') # Disfarce de utilizador real
 
 servico = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=servico, options=opcoes)
@@ -76,7 +78,11 @@ for jogo, mapas_do_jogo in mapas.items():
             
         try:
             driver.get(url)
-            time.sleep(6) 
+            time.sleep(6)
+            
+            # Verificação de bloqueio (Imprime o título do site para debug)
+            titulo = driver.title
+            print(f" -> Título da página: {titulo}")
             
             for modo, numero_aba in botoes.items():
                 try:
