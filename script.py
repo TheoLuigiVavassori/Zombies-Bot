@@ -119,4 +119,38 @@ driver.quit()
 with open('recordes.json', 'w') as arquivo:
     json.dump(recordes_finais, arquivo, indent=4)
 
-print("\n✅ Sucesso absoluto! O arquivo 'recordes.json' completo foi gerado.")
+print("\n✅ Sucesso absoluto! O arquivo 'recordes.json' completo foi gerado.")   
+name: Atualizar JSON (Meia-noite Brasília)
+
+on:
+  schedule:
+    # 03:00 UTC equivale a 00:00 no horário de Brasília (UTC-3)
+    - cron: '0 3 * * *'
+  workflow_dispatch: 
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Acessar a pasta do repositório
+        uses: actions/checkout@v3
+
+      - name: Ligar o Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar bibliotecas
+        run: pip install -r requirements.txt
+
+      - name: Rodar o seu código
+        run: python script.py
+
+      - name: Salvar o novo JSON na pasta
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Robo Automático"
+          git add recordes.json
+          git commit -m "Atualizando dados da meia-noite" || echo "Sem mudanças hoje"
+          git push
