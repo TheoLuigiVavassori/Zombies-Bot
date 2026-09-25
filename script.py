@@ -1,11 +1,3 @@
-# Baixa e instala o Google Chrome Oficial no servidor do Colab
-!wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-!sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-!apt-get -y update > /dev/null 2>&1
-!apt-get install -y google-chrome-stable > /dev/null 2>&1
-!pip install selenium webdriver-manager > /dev/null 2>&1
-
-print("✅ Chrome Oficial instalado com sucesso! Pode rodar o Bloco 2.")
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
