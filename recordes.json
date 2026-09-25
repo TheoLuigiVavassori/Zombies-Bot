@@ -1,10 +1,10 @@
 {
     "bo1": {
         "kino_der_toten": {
-            "1_player": "N/A",
-            "2_players": "N/A",
-            "3_players": "N/A",
-            "4_players": "N/A"
+            "1_player": 240,
+            "2_players": 172,
+            "3_players": 112,
+            "4_players": 106
         },
         "five": {
             "1_player": "N/A",
