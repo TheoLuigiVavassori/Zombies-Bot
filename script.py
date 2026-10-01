@@ -5,18 +5,32 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json
 
-print("Iniciando a Extração com o Chrome Oficial...")
+print("Iniciando a Extração com o Chrome Oficial (Modo Anti-Bot Ativado)...")
 
-# 1. Configuração com o Chrome Oficial (Agora com Disfarce e Ecrã Full HD)
+# 1. Configuração com o Chrome Oficial (Disfarce Máximo para Burlar Cloudflare)
 opcoes = webdriver.ChromeOptions()
 opcoes.add_argument('--headless=new') 
 opcoes.add_argument('--no-sandbox')
 opcoes.add_argument('--disable-dev-shm-usage')
-opcoes.add_argument('--window-size=1920,1080') # Força o layout de PC para a tabela aparecer
-opcoes.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36') # Disfarce de utilizador real
+opcoes.add_argument('--window-size=1920,1080')
+
+# Novas Linhas Anti-Bot:
+opcoes.add_argument('--disable-blink-features=AutomationControlled')
+opcoes.add_experimental_option("excludeSwitches", ["enable-automation"])
+opcoes.add_experimental_option('useAutomationExtension', False)
+opcoes.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36')
 
 servico = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=servico, options=opcoes)
+
+# Opcional: Modifica o driver via JavaScript para esconder ainda mais que é o Selenium
+driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
+    'source': '''
+        Object.defineProperty(navigator, 'webdriver', {
+          get: () => undefined
+        })
+    '''
+})
 
 # 2. Lista completa de links
 mapas = {
@@ -78,11 +92,10 @@ for jogo, mapas_do_jogo in mapas.items():
             
         try:
             driver.get(url)
-            time.sleep(6)
+            time.sleep(8) # Aumentei o tempo de espera para dar tempo da página contornar o bloqueio anti-bot
             
-            # Verificação de bloqueio (Imprime o título do site para debug)
             titulo = driver.title
-            print(f" -> Título da página: {titulo}")
+            print(f" -> Título da página lido: {titulo}")
             
             for modo, numero_aba in botoes.items():
                 try:
@@ -101,9 +114,9 @@ for jogo, mapas_do_jogo in mapas.items():
                 
                 for i, linha in enumerate(linhas):
                     if linha.strip() == "Platform":
-                        for j in range(i + 1, min(i + 10, len(linhas))):
+                        for j in range(i + 1, min(i + 15, len(linhas))):
                             if str(linhas[j]).strip() == "1":
-                                for k in range(j + 1, min(j + 15, len(linhas))):
+                                for k in range(j + 1, min(j + 20, len(linhas))):
                                     if linhas[k].strip().isdigit():
                                         round_atual = int(linhas[k].strip())
                                         break
